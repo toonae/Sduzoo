@@ -21,6 +21,8 @@ import android.widget.TextView;
             this.ints = ints;
             this.titleStrings = titleStrings;
             this.detailStrings = detailStrings;
+
+
         }
 
         @Override
@@ -49,10 +51,12 @@ import android.widget.TextView;
             TextView titleTextView = view1.findViewById(R.id.txv1);
             TextView detailTextView = view1.findViewById(R.id.txv2);
 
+
             //Show data นำข้อมูลไปแสดงผลบนแอป
             imageView.setImageResource(ints[i]);
             titleTextView.setText(titleStrings[i]);
             detailTextView.setText(detailStrings[i]);
+
             return view1;
         }
     }//end Class

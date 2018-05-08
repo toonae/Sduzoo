@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.crocodile,R.drawable.giraffe,R.drawable.hippo,R.drawable.mongolia,R.drawable.pen,
             R.drawable.portrait,R.drawable.sea,R.drawable.snake,R.drawable.tiger,R.drawable.tigerstar,R.drawable.zebra};
 
-    private String[] titleStrings, detailStrings;
+    private String[] titleStrings, detailStrings,TitleString,DetailString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +29,12 @@ public class MainActivity extends AppCompatActivity {
         //ดึงค่าจาก XML ที่ไฟล์ my_content มาแสดงผล
         titleStrings = getResources().getStringArray(R.array.title);
         detailStrings = getResources().getStringArray(R.array.detail);
+        TitleString = getResources().getStringArray(R.array.Title);
+        DetailString = getResources().getStringArray(R.array.Detail);
 
         MyAdapter myAdapter = new MyAdapter(MainActivity.this, ints, titleStrings, detailStrings);
         listView.setAdapter((ListAdapter) myAdapter);
+
 
         //เมื่อคลิกแต่ละ item ใน Listview จะเชื่อมโยงไปหน้า Detail
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent detailIntent = new Intent(MainActivity.this, DetailActivity.class);
                 detailIntent.putExtra("Title", titleStrings[i]);
                 detailIntent.putExtra("Detail", detailStrings[i]);
+                detailIntent.putExtra("Title",TitleString[i]);
+                detailIntent.putExtra( "Detail",DetailString[i]);
                 detailIntent.putExtra("Image", ints[i]);
                 startActivity(detailIntent);
             }

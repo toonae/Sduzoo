@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class DetailActivity extends AppCompatActivity {
 
     //Explicit
-    TextView titleTextView, detailTextView;
+    TextView titleTextView, detailTextView,TitleTextView,DetailTextView;
     ImageView signImageView;
     Button backButton;
 
@@ -23,6 +23,7 @@ public class DetailActivity extends AppCompatActivity {
         titleTextView = findViewById(R.id.txvTitle);
         detailTextView = findViewById(R.id.txvDetail);
         signImageView = findViewById(R.id.imvSign);
+
 
         //รับข้อมูลจากการ Intent ไปแสดงผลบนหน้า XML
         titleTextView.setText(getIntent().getStringExtra("Title"));
